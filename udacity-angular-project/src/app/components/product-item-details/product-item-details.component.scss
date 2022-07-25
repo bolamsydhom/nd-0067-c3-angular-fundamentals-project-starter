@@ -5,7 +5,8 @@ img {
   
   .select-input {
     width: 108px; 
-    margin-bottom: 8px;
+    margin-bottom: 16px;
+    margin-top: 16px;
   }
   
   .detail-container {
@@ -18,8 +19,29 @@ img {
   .detail-item {
     margin-left: 128px;
     margin-right: 128px;
+    display: flex;
+    gap: 32px;
   }
   
   .back-link {
-    margin-top: 8px;
+    display: inline-block;
+    margin-top: 32px;
+    margin-bottom: 8px;
+    text-decoration: none;
+    color: #33B5E5;
+
+  }
+  .detail-item-details{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn {
+    background-color: #33B5E5;
+    color: white;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    width: 150px;
   }

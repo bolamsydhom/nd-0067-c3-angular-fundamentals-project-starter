@@ -10,7 +10,7 @@ import { Cart } from 'src/app/_models/cart.model';
 })
 export class ProductItemComponent implements OnInit {
   @Input() product!: Product;
-  allowedNumberOfProducts = Array(4);
+  allowedNumberOfProducts = Array(10);
   quantity: number = 1;
 
   constructor(private cartService: CartService) { }
@@ -21,7 +21,7 @@ export class ProductItemComponent implements OnInit {
     alert(`${product.name} added to cart`);
     const cart: Cart = {
       product: product,
-      quantity: this.quantity
+      quantity: +this.quantity
     };
     this.cartService.addToCart(cart);
     

@@ -6,9 +6,12 @@
     <div>
         <span class="product-price">{{product.price | currency}}</span>
     </div>
-    <div>
-        <select name="quantity" id="quantity" class="select-input">
-            <option *ngFor="let item of allowedNumberOfProducts; let i = index" [value]="i+1">{{i+1}}</option>
-        </select>
+
+    <select name="quantity" id="quantity" class="select-input" [(ngModel)]="quantity" ngModel>
+        <option *ngFor="let item of allowedNumberOfProducts; let i = index" [value]="i+1">{{i+1}}</option>
+    </select>
+    <div class="cta">
+        <button class="btn btn-primary" (click)="addToCart(product)">Add to cart</button>
     </div>
+
 </div>

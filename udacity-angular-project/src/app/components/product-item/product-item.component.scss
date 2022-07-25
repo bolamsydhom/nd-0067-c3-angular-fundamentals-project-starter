@@ -4,6 +4,12 @@
     padding: 20px;
     margin: 6px 6px;        
     border: 1px solid #33B5E5;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+    &:hover{
+      transform: scale(1.05);
+      transition: all 0.5s ease-in-out;
+    }
   } 
   
   .product-container {
@@ -18,4 +24,15 @@
   .select-input {
     width: 108px; 
     margin-bottom: 8px;
+    margin-top: 8px;
+  }
+
+  .btn {
+    background-color: #33B5E5;
+    color: white;
+    padding: 12px;
+    margin: 6px 6px;
+    border: none;
+    cursor: pointer;
+    width: 290px;
   }

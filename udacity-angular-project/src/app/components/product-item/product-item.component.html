@@ -1,7 +1,10 @@
 <div class="product-container">
     <img [src]="product.url" alt="" class="product-image">
     <div>
-        <span class="product-price">{{product.price}}</span>
+        <h3>{{product.name}}</h3>
+    </div>
+    <div>
+        <span class="product-price">{{product.price | currency}}</span>
     </div>
     <div>
         <select name="quantity" id="quantity" class="select-input">

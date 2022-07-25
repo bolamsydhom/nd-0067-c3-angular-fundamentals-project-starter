@@ -1,1 +1,29 @@
-<p>cart works!</p>
+<div class="container">
+
+    <div class="card-container">
+        <div class="cart-item">
+            <div class="cart-img">
+                <img [src]="" alt="" class="product-image">
+            </div>
+            <div class="product-details">
+                <h3>{{'product.name'}}</h3>
+                <span class="product-price">{{5 | currency}}</span>
+                <input type="number" name="quantity" id="quantity" class="number-input">
+            </div>
+        </div>
+    </div>
+
+    <form #form="ngForm" class="cart-panel ">
+        <label for="name">Full Name</label>
+        <input ngModel type="text" name="name" id="name" placeholder="minimum 3 characters" minlength="3" required>
+        <label for="address">Address</label>
+        <input ngModel type="text" name="address" id="address" placeholder="minimum 6 characters" minlength="6"
+            required>
+        <label for="creditCard">Credit Card</label>
+        <input ngModel type="text" name="creditCard" id="creditCard" placeholder="16 digits number" minlength="16"
+            maxlength="16" required pattern="^\d+$">
+
+        <button class="btn btn-primary" (click)="submit(form)" [disabled]="form.invalid">Submit</button>
+    </form>
+
+</div>

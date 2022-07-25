@@ -9,7 +9,20 @@ export class CartService {
   constructor() { }
 
   addToCart(cart: Cart) {
-    this.cartList.push(cart);
+    if(this.cartList.length === 0) {
+      this.cartList.push(cart);
+    } else {
+      let isExist = false;
+      this.cartList.forEach((item: Cart) => {
+        if(item.product.id === cart.product.id) {
+          item.quantity += cart.quantity;
+          isExist = true;
+        }
+      });
+      if(!isExist) {
+        this.cartList.push(cart);
+      }
+    }
   }
 
   getCartList() {

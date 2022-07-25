@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: center;
     margin-top: 8%;
+    flex-direction: column;
   }
   
   .confirmation-items {
@@ -17,4 +18,13 @@
   
   .confirmation-item {
     margin-bottom: 30px;
+  }
+
+  .btn {
+    background-color: #33B5E5;
+    color: white;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    width: 150px;
   }

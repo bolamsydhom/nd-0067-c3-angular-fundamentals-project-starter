@@ -1,5 +1,22 @@
   <div class="confirmation-container">
-    <div class="confirmation-header"></div>
-    <div class="confirmation-items"></div>
-    <div class="confirmation-item"></div>
+    <div class="confirmation-header">
+        <h1>Success! 🎉</h1>
+    </div>
+    <div class="confirmation-items">
+        <div class="confirmation-item">
+            Thank you, <strong>{{order?.cstName}}</strong>
+        </div>
+
+       <div class="confirmation-item">
+            your <strong>{{order?.orderTotal | currency}}</strong> order is confirmed
+        </div>
+
+        <div class="confirmation-item">
+            Please allow 1-3 business day(s) for shopping.
+        </div>
+
+        <div class="cta">
+            <button class="btn btn-primary" routerLink="/home">Back to product list</button>
+        </div>
+    </div>
   </div>

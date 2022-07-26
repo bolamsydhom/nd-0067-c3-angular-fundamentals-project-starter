@@ -1,6 +1,6 @@
 import { CartService } from './../../_services/cart.service';
 import { Product } from './../../_models/product.model';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Cart } from 'src/app/_models/cart.model';
 
 @Component({
@@ -10,6 +10,7 @@ import { Cart } from 'src/app/_models/cart.model';
 })
 export class ProductItemComponent implements OnInit {
   @Input() product!: Product;
+  @Output() productClicked = new EventEmitter<Cart>();
   allowedNumberOfProducts = Array(10);
   quantity: number = 1;
 
@@ -17,13 +18,13 @@ export class ProductItemComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
   addToCart(product: Product){
     alert(`${product.name} added to cart`);
     const cart: Cart = {
       product: product,
       quantity: +this.quantity
     };
-    this.cartService.addToCart(cart);
-    
+    this.productClicked.emit(cart);
   }
 }

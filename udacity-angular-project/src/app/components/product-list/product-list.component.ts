@@ -1,3 +1,5 @@
+import { CartService } from './../../_services/cart.service';
+import { Cart } from './../../_models/cart.model';
 import { Product } from './../../_models/product.model';
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/_services/product.service';
@@ -12,7 +14,7 @@ export class ProductListComponent implements OnInit {
 
   productList!: Product[];
   subscriptions: Subscription[] = [];
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService, private cartService: CartService) { }
 
   ngOnInit(): void {
     this.getAllProducts();
@@ -24,5 +26,7 @@ export class ProductListComponent implements OnInit {
     }))
 
   }
-
+  addToCart(cart: Cart){
+    this.cartService.addToCart(cart);
+  }
 }

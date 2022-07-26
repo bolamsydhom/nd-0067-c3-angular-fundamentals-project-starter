@@ -12,7 +12,7 @@
                 <div class="cart-item-details">
                     <h3>{{item.product.name}}</h3>
                     <span class="product-price">{{item.product.price| currency}}</span>
-                    <input type="number" name="quantity" id="quantity" class="number-input" [value]="item.quantity" (change)="onChangeQuantity($event, i)">
+                    <input type="number" name="quantity" id="quantity" class="number-input" [ngModel]="item.quantity" ngModel (ngModelChange)="onChangeQuantity($event, i)">
                 </div>
             </div>
             <div>

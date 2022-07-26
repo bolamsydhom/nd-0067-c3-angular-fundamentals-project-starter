@@ -36,8 +36,7 @@ export class CartComponent implements OnInit {
   }
 
   onChangeQuantity(e: any, index: number) {
-    const quantity = e.target.value;
-    console.log(quantity);
+    const quantity = e;
 
     if (Number(quantity) > 0) {
       this.cartList[index].quantity = quantity;
